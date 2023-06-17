@@ -31,8 +31,7 @@ public class Server {
     public static final Logger rootLogger = LogManager.getLogger(MainServer.class);
 
     private final DatabaseManager databaseManager;
-    //todo rewrite on making new Thread
-    private final ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+//    private final ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 
     public Server(CommandManager commandManager, DatabaseManager databaseManager) {
         this.port = MainServer.PORT;
@@ -51,7 +50,9 @@ public class Server {
             while(true){
                 FutureManager.checkAllFutures();
                 try{
-                    cachedThreadPool.submit(new ConnectionManager(commandManager, connectToClient(), databaseManager));
+                    Thread thread = new Thread(new ConnectionManager(commandManager, connectToClient(), databaseManager));
+                    thread.start();
+//                    cachedThreadPool.submit(new ConnectionManager(commandManager, connectToClient(), databaseManager));
                 } catch (ConnectionErrorException ignored){}
             }
         } catch (OpeningServerException e) {
