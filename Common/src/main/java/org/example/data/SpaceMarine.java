@@ -1,17 +1,12 @@
 package org.example.data;
 
-import org.example.error.InvalidInputException;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 /**
  * The class with spaceMarine's constructor
  */
-@XmlRootElement
-@XmlAccessorType (XmlAccessType.FIELD)
 public class SpaceMarine implements Comparable<SpaceMarine>, Serializable, IValidator {
     private Long id;
     private String name;
@@ -19,7 +14,6 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable, IVali
 
     private Coordinates coordinates;
 
-    @XmlTransient
     private LocalDate creationDate;
     private Float health;
     private AstartesCategory category;
@@ -111,8 +105,6 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable, IVali
         this.coordinates = coordinates;
     }
 
-    @XmlElement(name = "creation_date")
-    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     public LocalDate getCreationDate() {
         return creationDate;
     }
@@ -186,15 +178,7 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable, IVali
                 ", chapter=" + chapter +
                 '}';
     }
-//    public void update(SpaceMarine spaceMarine) {
-//        this.name = spaceMarine.name;
-//        this.coordinates = spaceMarine.coordinates;
-//        this.creationDate = spaceMarine.creationDate;
-//        this.health = spaceMarine.health;
-//        this.category = spaceMarine.category;
-//        this.weaponType = spaceMarine.weaponType;
-//        this.chapter = spaceMarine.chapter;
-//    }
+
 
     @Override
     public boolean validate() {

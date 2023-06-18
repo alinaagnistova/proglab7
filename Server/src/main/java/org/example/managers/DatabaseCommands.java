@@ -28,7 +28,7 @@ public class DatabaseCommands {
                 name TEXT NOT NULL ,
                 cord_x INT NOT NULL,
                 cord_y NUMERIC NOT NULL ,
-                creation_date TIMESTAMP NOT NULL ,
+                creation_date DATE NOT NULL ,
                 health NUMERIC NOT NULL ,
                 astartes_category ASTARTES_CATEGORY,
                 weapon_type WEAPON,

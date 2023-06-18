@@ -29,7 +29,6 @@ public class DatabaseManager {
             this.connect();
             this.createMainBase();
         } catch (SQLException e) {
-            e.printStackTrace();
             databaseLogger.warn("Ошибка при исполнени изначального запроса либо таблицы уже созданы");
         } catch (NoSuchAlgorithmException e) {
             databaseLogger.fatal("Такого алгоритма нет!");
@@ -112,7 +111,7 @@ public class DatabaseManager {
             ps.setString(1, spaceMarine.getName());
             ps.setFloat(2, spaceMarine.getCoordinates().getX());
             ps.setDouble(3, spaceMarine.getCoordinates().getY());
-            ps.setTimestamp(4, new java.sql.Timestamp(spaceMarine.getCreationDate().getDayOfYear()));
+            ps.setDate(4, java.sql.Date.valueOf(spaceMarine.getCreationDate()));
             ps.setFloat(5, spaceMarine.getHealth());
             ps.setObject(6, spaceMarine.getCategory(), Types.OTHER);
             ps.setObject(7, spaceMarine.getWeaponType(), Types.OTHER);
@@ -142,7 +141,7 @@ public class DatabaseManager {
             ps.setString(1, spaceMarine.getName());
             ps.setFloat(2, spaceMarine.getCoordinates().getX());
             ps.setDouble(3, spaceMarine.getCoordinates().getY());
-            ps.setTimestamp(4, new java.sql.Timestamp(spaceMarine.getCreationDate().getDayOfYear()));
+            ps.setDate(4, java.sql.Date.valueOf(spaceMarine.getCreationDate()));
             ps.setFloat(5, spaceMarine.getHealth());
             ps.setObject(6, spaceMarine.getCategory(), Types.OTHER);
             ps.setObject(7, spaceMarine.getWeaponType(), Types.OTHER);
@@ -200,7 +199,7 @@ public class DatabaseManager {
             while (resultSet.next()){
                 collection.add(new SpaceMarine(
                         resultSet.getLong("id"),
-                        resultSet.getString("group_name"),
+                        resultSet.getString("name"),
                         new Coordinates(
                                 resultSet.getInt("cord_x"),
                                 resultSet.getFloat("cord_y")

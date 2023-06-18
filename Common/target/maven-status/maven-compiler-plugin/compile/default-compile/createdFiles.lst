@@ -4,9 +4,9 @@ org\example\data\Weapon.class
 org\example\error\InvalidInputException.class
 org\example\error\InvalidFormException.class
 org\example\error\NoSuchIDException.class
-org\example\data\LocalDateAdapter.class
 org\example\dtp\Response.class
 org\example\data\IValidator.class
+org\example\dtp\User.class
 org\example\dtp\ResponseStatus.class
 org\example\error\IllegalArgumentsException.class
 org\example\dtp\Request.class

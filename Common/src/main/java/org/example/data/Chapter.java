@@ -1,6 +1,5 @@
 package org.example.data;
 
-import org.example.error.InvalidInputException;
 
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -8,8 +7,6 @@ import java.io.Serializable;
 /**
  * The class with spaceMarine's chapter
  */
-@XmlRootElement
-@XmlAccessorType (XmlAccessType.FIELD)
 public class Chapter implements Serializable, IValidator {
     private String name;
     private Integer marinesCount;
@@ -20,12 +17,6 @@ public class Chapter implements Serializable, IValidator {
     }
 
     public Chapter(String name, Integer marinesCount) {
-//        if (name == null || name.isEmpty() || name.isBlank()){
-//            throw new InvalidInputException("Строка не может быть пустой");
-//        }
-//        if (marinesCount == null){
-//            throw new InvalidInputException("marinesCount не может быть null");
-//        }
         this.name = name;
         this.marinesCount = marinesCount;
     }

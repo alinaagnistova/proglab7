@@ -1,21 +1,15 @@
 package org.example.data;
 
-import org.example.error.InvalidInputException;
 
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 /**
  * The class with spaceMarine's coordinates
  */
-@XmlRootElement
-@XmlAccessorType (XmlAccessType.FIELD)
-@XmlType(propOrder = {"x", "y"})
 public class Coordinates implements Serializable, IValidator {
     private static final long serialVersionUID = 3L;
 
-    @XmlTransient
     private Integer x;
-    @XmlTransient
     private Float y;
 
     public Coordinates() {
@@ -26,12 +20,10 @@ public class Coordinates implements Serializable, IValidator {
         this.y = y;
     }
 
-    @XmlElement
     public void setX(Integer x) {
         this.x = x;
     }
 
-    @XmlElement
     public void setY(Float y) {
         this.y = y;
     }
