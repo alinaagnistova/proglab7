@@ -42,6 +42,7 @@ public class MainServer extends Thread{
                     new InfoCommand(collectionManager),
                     new ShowCommand(collectionManager),
                     new AddCommand(collectionManager),
+                    new Ping(),
                     new UpdateIdCommand(collectionManager),
                     new RemoveByIdCommand(collectionManager),
                     new ClearCommand(collectionManager),

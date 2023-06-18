@@ -29,7 +29,6 @@ public class Server {
     public static final Logger rootLogger = LogManager.getLogger(MainServer.class);
 
     private final DatabaseManager databaseManager;
-//    private final ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 
     public Server(CommandManager commandManager, DatabaseManager databaseManager) {
         this.port = MainServer.PORT;

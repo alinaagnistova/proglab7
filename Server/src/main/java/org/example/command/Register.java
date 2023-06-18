@@ -32,6 +32,7 @@ public class Register extends BaseCommand {
         try {
             databaseManager.addUser(request.getUser());
         } catch (SQLException e) {
+            e.getMessage();
             commandLogger.fatal("Невозможно добавить пользователя");
             return new Response(ResponseStatus.LOGIN_FAILED, "Введен невалидный пароль!");
         }

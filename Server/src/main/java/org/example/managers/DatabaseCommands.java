@@ -24,7 +24,7 @@ public class DatabaseCommands {
                 'INFERNO_PISTOL'
             );
             CREATE TABLE IF NOT EXISTS spaceMarine (
-                id SERIAL PRIMARY KEY,
+                id BIGSERIAL PRIMARY KEY,
                 name TEXT NOT NULL ,
                 cord_x INT NOT NULL,
                 cord_y NUMERIC NOT NULL ,
@@ -34,7 +34,7 @@ public class DatabaseCommands {
                 weapon_type WEAPON,
                 melee_weapon MELEE_WEAPON,
                 chapter_name TEXT NOT NULL,
-                chapter_marines_count INT NOT NULL
+                chapter_marines_count INT NOT NULL,
                 owner_login TEXT NOT NULL
             );
             CREATE TABLE IF NOT EXISTS users (
