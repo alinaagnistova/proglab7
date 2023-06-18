@@ -16,9 +16,8 @@ import java.util.List;
 public class MainServer extends Thread{
     public static final String HASHING_ALGORITHM = "SHA-1";
     public static final int CONNECTION_TIMEOUT = 60 * 1000;
-    public static final String DATABASE_URL = "jdbc:postgresql://localhost:5432/studs";
+    public static final String DATABASE_URL = "jdbc:postgresql://localhost:5433/studs";
     public static final String DATABASE_URL_HELIOS = "jdbc:postgresql://pg:5432/studs";
-    //todo rewrite
     public static final String DATABASE_CONFIG_PATH = "C:\\Users\\agnis\\IdeaProjects\\proglab7\\server\\dbconfig.cfg";
 
     private static final ReaderWriter console = new BlankConsole();
@@ -47,6 +46,7 @@ public class MainServer extends Thread{
                     new RemoveByIdCommand(collectionManager),
                     new ClearCommand(collectionManager),
                     new ExecuteScriptCommand(),
+                    new Register(DatabaseHandler.getDatabaseManager()),
                     new ExitCommand(),
                     new SortCommand(collectionManager),
                     new RemoveGreaterCommand(collectionManager),
