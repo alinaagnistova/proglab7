@@ -6,7 +6,6 @@ import org.example.dtp.Request;
 import org.example.dtp.Response;
 import org.example.dtp.ResponseStatus;
 import org.example.error.IllegalArgumentsException;
-import org.example.utils.Console;
 import org.example.utils.DatabaseHandler;
 
 import java.util.Objects;
@@ -25,7 +24,6 @@ public class AddCommand extends BaseCommand implements CollectionEditor{
     /**
      * add a new element to the collection
      *
-     * @param request
      */
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {

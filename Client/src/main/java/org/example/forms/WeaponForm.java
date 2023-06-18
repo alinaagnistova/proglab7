@@ -1,7 +1,6 @@
 package org.example.forms;
 
 import org.example.console.*;
-import org.example.data.MeleeWeapon;
 import org.example.data.Weapon;
 import org.example.error.FileModeException;
 import org.example.utils.ConsoleColors;

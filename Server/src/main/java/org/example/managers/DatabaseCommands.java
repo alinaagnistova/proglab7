@@ -52,7 +52,7 @@ public class DatabaseCommands {
 
     public static final String addObject = """
             INSERT INTO spaceMarine(name, cord_x, cord_y, creation_date, health, astartes_category, weapon_type, melee_weapon, chapter_name, chapter_marines_count, owner_login)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             RETURNING id;
             """;
 
@@ -71,7 +71,7 @@ public class DatabaseCommands {
     public static final String updateUserObject = """
             UPDATE spaceMarine
             SET (name, cord_x, cord_y, creation_date, health, astartes_category, weapon_type, melee_weapon, chapter_name, chapter_marines_count)
-             = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+             = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             WHERE (id = ?) AND (owner_login = ?)
             RETURNING id;
             """;

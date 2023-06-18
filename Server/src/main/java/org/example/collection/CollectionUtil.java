@@ -1,13 +1,11 @@
 package org.example.collection;
 
 import org.example.data.SpaceMarine;
-import org.example.managers.Validator;
 
 /**
  * The class that realize methods for work with SpaceMarine
  */
 public class CollectionUtil {
-    static Validator validator = new Validator();
 
     /**
      * @param ID
@@ -40,21 +38,6 @@ public class CollectionUtil {
                     "\n-----------------------------------------------------------------------------\n"
             );
         }
-        public boolean checkIfCorrect(SpaceMarine spaceMarine){
-            if (
-                        validator.checkName(spaceMarine.getName()) ||
-                        validator.checkCoordinateX(spaceMarine.getCoordinates().getX()) ||
-                        validator.checkCoordinateY(spaceMarine.getCoordinates().getY()) ||
-                        validator.checkHealth(spaceMarine.getHealth()) ||
-                        validator.checkCategory(spaceMarine.getCategory()) ||
-                        validator.checkWeapon(spaceMarine.getWeaponType()) ||
-                        validator.checkMeleeWeapon(spaceMarine.getMeleeWeapon()) ||
-                        validator.checkName(spaceMarine.getChapter().getName()) ||
-                        validator.checkMarinesCount(spaceMarine.getChapter().getMarinesCount())
-            ){
-                return true;
-            }
-            return false;
-        }
+
     }
 

@@ -5,12 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.example.collection.CollectionManager;
 import org.example.command.*;
 import org.example.managers.CommandManager;
-import org.example.managers.DatabaseManager;
 import org.example.utils.*;
 
-import javax.xml.bind.JAXBException;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public class MainServer extends Thread{
@@ -20,7 +16,6 @@ public class MainServer extends Thread{
     public static final String DATABASE_URL_HELIOS = "jdbc:postgresql://pg:5432/studs";
     public static final String DATABASE_CONFIG_PATH = "C:\\Users\\agnis\\IdeaProjects\\proglab7\\server\\dbconfig.cfg";
 
-    private static final ReaderWriter console = new BlankConsole();
         public static int PORT;
         public static final Logger rootLogger = LogManager.getRootLogger();
 

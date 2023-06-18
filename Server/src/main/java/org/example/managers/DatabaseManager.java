@@ -29,7 +29,7 @@ public class DatabaseManager {
             this.connect();
             this.createMainBase();
         } catch (SQLException e) {
-            e.getMessage();
+            e.printStackTrace();
             databaseLogger.warn("Ошибка при исполнени изначального запроса либо таблицы уже созданы");
         } catch (NoSuchAlgorithmException e) {
             databaseLogger.fatal("Такого алгоритма нет!");
@@ -129,6 +129,7 @@ public class DatabaseManager {
             databaseLogger.info("Объект добавлен в таблицу");
             return resultSet.getInt(1);
         } catch (SQLException e) {
+            e.printStackTrace();
             databaseLogger.info("Объект не добавлен в таблицу");
             databaseLogger.debug(e);
             return -1;
@@ -148,10 +149,9 @@ public class DatabaseManager {
             ps.setObject(8, spaceMarine.getMeleeWeapon(), Types.OTHER);
             ps.setString(9, spaceMarine.getChapter().getName());
             ps.setInt(10, spaceMarine.getChapter().getMarinesCount());
-            ps.setString(11, user.name());
 
-            ps.setLong(12, id);
-            ps.setString(13, user.name());
+            ps.setLong(11, id);
+            ps.setString(12, user.name());
             ResultSet resultSet = ps.executeQuery();
             System.out.println(resultSet);
             return resultSet.next();

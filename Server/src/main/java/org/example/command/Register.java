@@ -17,7 +17,7 @@ public class Register extends BaseCommand {
     DatabaseManager databaseManager;
 
     public Register(DatabaseManager databaseManager) {
-        super("register", ": Зарегистрировать пользователя");
+        super("register", "register : зарегистрировать пользователя");
         this.databaseManager = databaseManager;
     }
 

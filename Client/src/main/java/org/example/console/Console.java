@@ -24,15 +24,13 @@ private static boolean fileMode = false;
     @Override
     public Long readLong() {
         Scanner scanner = new Scanner(System.in);
-        Long number = Long.valueOf(scanner.nextLine().trim());
-        return number;
+        return Long.valueOf(scanner.nextLine().trim());
     }
 
     @Override
     public String readLine() {
         Scanner scanner = new Scanner(System.in);
-        String text = scanner.nextLine().trim();
-        return text;
+        return scanner.nextLine().trim();
     }
 
     @Override
@@ -60,33 +58,5 @@ private static boolean fileMode = false;
         }
 
     }
-//    public void fileRead() throws JAXBException, FileNotFoundException {
-//        boolean flag = false;
-//        try {
-//            while (!flag) {
-//                System.out.println("Введите название файла еще раз");
-//                Scanner scanner = new Scanner(System.in);
-//                File file = new File(scanner.nextLine());
-//                if (file.exists() && !file.isDirectory()) {
-//                    flag = true;
-//                    collectionManager.setCollection(loadFromXml(file.getName()).getCollection());
-//                    Request<CollectionManager> request = new Request<>(null, collectionManager, collectionManager);
-//                    CollectionManager result = requestManager.sendCollection(request);
-//                    result.getCollection();
-//                    collectionManager.setCollection(result.getCollection());
-//                }
-//            }
-//        } catch (IllegalArgumentException | JAXBException | IOException | ClassNotFoundException e) {
-//            System.out.println("Файл не найден");
-//        }
-//    }
-//    }
-//    @Override
-//    public File readFileName(){
-//        Scanner scanner = new Scanner(System.in);
-//        String path = scanner.nextLine();
-//        File file = new File(String.valueOf(path));
-//        return file;
-//    }
 
 }

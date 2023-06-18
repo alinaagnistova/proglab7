@@ -2,15 +2,12 @@ package org.example.managers;
 
 import org.example.command.BaseCommand;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.command.CollectionEditor;
 import org.example.dtp.Request;
 import org.example.dtp.Response;
 import org.example.error.CommandRuntimeException;

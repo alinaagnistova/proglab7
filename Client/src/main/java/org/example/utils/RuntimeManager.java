@@ -9,7 +9,6 @@ import org.example.dtp.User;
 import org.example.error.ExitObligedException;
 import org.example.error.FileModeException;
 import org.example.error.InvalidFormException;
-import org.example.error.LoginFail;
 import org.example.forms.SpaceMarineForm;
 import org.example.forms.UserForm;
 
@@ -22,7 +21,6 @@ import java.util.Scanner;
 
 /**
  * Класс обработки пользовательского ввода
- * @author
  */
 public class RuntimeManager {
     private final Console console;

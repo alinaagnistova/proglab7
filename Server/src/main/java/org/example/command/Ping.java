@@ -8,7 +8,7 @@ import org.example.error.IllegalArgumentsException;
  */
 public class Ping extends BaseCommand {
     public Ping() {
-        super("ping", ": пингануть сервер");
+        super("ping", "ping : пингануть сервер");
     }
 
     /**

@@ -2,7 +2,6 @@ package org.example.forms;
 
 import org.example.data.*;
 import org.example.utils.ReadManager;
-import org.example.utils.Readable;
 import org.example.console.*;
 import org.example.utils.ExecuteFileManager;
 
@@ -30,7 +29,7 @@ public class SpaceMarineForm extends Form<SpaceMarine> {
     public SpaceMarine build() {
         ReadManager readManager = new ReadManager(console);
         LocalDate localDate = LocalDate.now();
-        SpaceMarine spaceMarine = new SpaceMarine(
+        return new SpaceMarine(
                         readManager.readName(),
                         readCoordinates(),
                         readManager.readHealth(),
@@ -40,7 +39,6 @@ public class SpaceMarineForm extends Form<SpaceMarine> {
                         readMeleeWeapon(),
                         readChapter()
                 );
-        return spaceMarine;
     }
     private Coordinates readCoordinates(){
         return new CoordinatesForm(console).build();

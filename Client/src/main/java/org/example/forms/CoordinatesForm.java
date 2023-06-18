@@ -1,7 +1,6 @@
 package org.example.forms;
 
 import org.example.utils.ReadManager;
-import org.example.utils.Readable;
 import org.example.console.*;
 import org.example.data.Coordinates;
 import org.example.utils.ExecuteFileManager;
