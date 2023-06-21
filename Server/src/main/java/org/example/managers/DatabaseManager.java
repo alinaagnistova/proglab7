@@ -70,11 +70,14 @@ public class DatabaseManager {
         PreparedStatement ps = connection.prepareStatement(DatabaseCommands.addUser);
         if (this.checkExistUser(login)) throw new SQLException();
         ps.setString(1, login);
-        ps.setString(2, this.getSHA512Hash(pass));
+        ps.setString(2, this.getSHA1Hash(pass));
         ps.setString(3, salt);
         ps.execute();
         databaseLogger.info("Добавлен пользователь " + user);
     }
+    /**
+     * method that check if user exist and check if hash matches with saved pass
+     */
 
     public boolean confirmUser(User inputUser){
         try {
@@ -84,7 +87,7 @@ public class DatabaseManager {
             ResultSet resultSet = getUser.executeQuery();
             if(resultSet.next()) {
                 String salt = resultSet.getString("salt");
-                String toCheckPass = this.getSHA512Hash(PEPPER + inputUser.password() + salt);
+                String toCheckPass = this.getSHA1Hash(PEPPER + inputUser.password() + salt);
                 return toCheckPass.equals(resultSet.getString("password"));
             }
             else {
@@ -232,8 +235,7 @@ public class DatabaseManager {
         }
         return sb.toString();
     }
-    //todo rewrite
-    private String getSHA512Hash(String input){
+    private String getSHA1Hash(String input){
         byte[] inputBytes = input.getBytes();
         md.update(inputBytes);
         byte[] hashBytes = md.digest();

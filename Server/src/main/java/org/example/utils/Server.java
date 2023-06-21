@@ -49,7 +49,6 @@ public class Server {
                 try{
                     Thread thread = new Thread(new ConnectionManager(commandManager, connectToClient(), databaseManager));
                     thread.start();
-//                    cachedThreadPool.submit(new ConnectionManager(commandManager, connectToClient(), databaseManager));
                 } catch (ConnectionErrorException ignored){}
             }
         } catch (OpeningServerException e) {

@@ -15,9 +15,7 @@ import java.util.concurrent.*;
 public class ConnectionManager implements Runnable{
     private final CommandManager commandManager;
     private final DatabaseManager databaseManager;
-    //todo check if correct
     private static final ForkJoinPool forkJoinPool = new ForkJoinPool();
-    //todo check if correct
     private static final ForkJoinPool forkJoinPool1 = new ForkJoinPool();
     private final SocketChannel clientSocket;
 
